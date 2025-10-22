@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>raghav madiraju - Portfolio</title>
+    <title>Raghav - Portfolio</title>
     <style>
         * {
             margin: 0;
@@ -146,10 +146,13 @@
         .portfolio-item {
             background: white;
             border-radius: 12px;
-            overflow: hidden;
+            overflow: visible;
             box-shadow: 0 4px 20px rgba(0,0,0,0.08);
             transition: transform 0.3s, box-shadow 0.3s;
             cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            display: block;
         }
 
         .portfolio-item:hover {
@@ -168,6 +171,55 @@
             font-size: 1.1rem;
         }
 
+        .photo-stack {
+            position: relative;
+            height: 300px;
+            margin: 2rem auto;
+            perspective: 1000px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .photo-stack img {
+            position: absolute;
+            width: 280px;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+            transition: all 0.5s ease;
+            cursor: pointer;
+        }
+
+        .photo-stack img:nth-child(1) {
+            transform: rotate(-8deg) translateX(-30px);
+            z-index: 1;
+        }
+
+        .photo-stack img:nth-child(2) {
+            transform: rotate(2deg);
+            z-index: 2;
+        }
+
+        .photo-stack img:nth-child(3) {
+            transform: rotate(10deg) translateX(30px);
+            z-index: 1;
+        }
+
+        .photo-stack:hover img:nth-child(1) {
+            transform: rotate(-8deg) translateX(-50px) scale(1.1);
+        }
+
+        .photo-stack:hover img:nth-child(2) {
+            transform: rotate(2deg) scale(1.15);
+            z-index: 3;
+        }
+
+        .photo-stack:hover img:nth-child(3) {
+            transform: rotate(10deg) translateX(50px) scale(1.1);
+        }
+
         .portfolio-content {
             padding: 1.5rem;
         }
@@ -181,6 +233,40 @@
             color: #718096;
         }
 
+        .resume-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            margin-bottom: 2rem;
+        }
+
+        .resume-section h3 {
+            color: #667eea;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+
+        .resume-item {
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .resume-item:last-child {
+            border-bottom: none;
+        }
+
+        .resume-item h4 {
+            color: #2d3748;
+            margin-bottom: 0.3rem;
+        }
+
+        .resume-meta {
+            color: #718096;
+            font-size: 0.95rem;
+            margin-bottom: 0.8rem;
+        }
 
         .contact {
             background: white;
@@ -258,17 +344,17 @@
             <h2>About Me</h2>
             <div class="about">
                 <div class="profile-img">
-                    insert generic photo here
+                    Your Photo Here
                 </div>
                 <div class="about-text">
-                    <p>sup fuzz welcome to my website i try to make cool stuff and not get crushed by hundreds of pounds</p>
-                    <p>this website is just gonna show my powerlifting stuff and maybe some stuff for hackclub</p>
+                    <p>Hi! I'm a passionate professional with expertise in multiple areas. I love creating innovative solutions and bringing ideas to life through thoughtful design and development.</p>
+                    <p>With years of experience in my field, I've worked on diverse projects that challenge me to grow and learn continuously. I'm always excited to take on new challenges and collaborate with others.</p>
                     <div class="skills">
                         <span class="skill-tag">JavaScript</span>
-                        <span class="skill-tag">Guitar</span>
-                        <span class="skill-tag">Music</span>
-                        <span class="skill-tag">Cooking</span>
-                        <span class="skill-tag">Lifting</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Design</span>
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">UI/UX</span>
                         <span class="skill-tag">Photography</span>
                     </div>
                 </div>
@@ -276,48 +362,54 @@
         </section>
 
         <section id="portfolio">
-            <h2>Portfolio</h2>
+            <h2>lifting</h2>
+            
+            <div class="photo-stack">
+                <img src="images/photo1.jpg" alt="Photo 1">
+                <img src="images/photo2.jpg" alt="Photo 2">
+                <img src="images/photo3.jpg" alt="Photo 3">
+            </div>
+        <h2>hackclub</h2>
             <div class="portfolio-grid">
-                <div class="portfolio-item">
-                    <img src="image.s/screenshot1.png" class="profile-img" style="object-fit: cover;">
+                <a href="mark-wahlberg.html" class="portfolio-item" target="_blank">
+                    <img src="image.s/hackclub1.png" alt="Description" class="portfolio-img">
                     <div class="portfolio-content">
                         <h3>mark-wahlberg</h3>
                         <p>this was my project for pathfinder learn more about it.</p>
                     </div>
-                </div>
-                <div class="portfolio-item">
-                    <img src="image.s/screenshot2.png" class="profile-img" style="object-fit: cover;">
+                </a>
+                <a href="seth-green.html" class="portfolio-item" target="_blank">
+                    <img src="image.s/hackclub2.png" alt="Description" class="portfolio-img">
                     <div class="portfolio-content">
                         <h3>seth-green</h3>
                         <p>this was my project for solder that i dont think i finished, great actor tho</p>
                     </div>
-                </div>
-                <div class="portfolio-item">
-                    <img src="image.s/screenshot.3.webp" class="profile-img" style="object-fit: cover;">
+                </a>
+                <a href="seth-blue.html" class="portfolio-item" target="_blank">
+                    <img src="image.s/hackclub3.webp" alt="Description" class="portfolio-img">
                     <div class="portfolio-content">
                         <h3>seth-blue</h3>
                         <p>this is another chrome extension i made called takeachillpill</p>
                     </div>
-                </div>
+                </a>
             </div>
         </section>
 
+      
 
         <section id="contact">
-            <h2>Get In Touch</h2>
+            <h2>my contacts</h2>
             <div class="contact">
-                <p>for further inquires about litteraly anything</p>
+                <p>have a question? Feel free to ask!</p>
                 <div class="contact-links">
-                    <a href="mailto:raghavmadiraju@gmail.com" class="contact-btn">heres my email</a>
-                    <a href="https://linkedin.com/in/raghav-madiraju-1363bb338" class="contact-btn" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                    <a href="https://github.com/reghev" class="contact-btn" target="_blank" rel="noopener noreferrer">GitHub</a>
-                </div>
+    <a href="mailto:raghavmadiraju@gmail.com" class="contact-btn">Email</a>
+    <a href="https://www.linkedin.com/in/raghav-madiraju-1363bb338" class="contact-btn" target="_blank">LinkedIn</a>
+    <a href="https://github.com/reghev" class="contact-btn" target="_blank">GitHub</a>
+</div>
             </div>
         </section>
-    </div>
-
     <footer>
-        <p>&copy; 2025 Your Name. All rights reserved.</p>
+        <p>&copy; 2025 Raghav Madiraju. All rights reserved.</p>
     </footer>
 </body>
 </html>
